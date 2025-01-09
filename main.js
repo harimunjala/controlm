@@ -1,4 +1,4 @@
-//Initial code commit by Hari Kumar Munjala
+//Initial code commit by harimunjala
 const fs = require('fs/promises');
 const path = require('path');
 const core = require('@actions/core');

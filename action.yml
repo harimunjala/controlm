@@ -10,7 +10,7 @@ inputs:
     endPoint:
         description: 'Automation API EndPoint'
         required: true
-        default: 'https://se-dev-aapi.sandbox.us1.controlm.com/automation-api'    
+        default: 'https://{{controlm-em-hostname:port}}/automation-api'    
     deployDescriptor:
         description: 'Deploy Descriptor File'
         required: false

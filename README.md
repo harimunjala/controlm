@@ -58,7 +58,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Deploy Jobs using AAPI
-        uses: BMCDBA-Presales/controlm/.github/actions/deploy-aapi@main
+        uses: harimunjala/controlm@v1.0.0-alpha
         with:
           deployCommand: update_jobs
           endPoint: ${{ vars.QA_AWS_ENDPOINT }}
@@ -69,7 +69,7 @@ jobs:
     runs-on: presalespoc
     steps:
       - name: Deploy Secrets using AAPI
-        uses: BMCDBA-Presales/controlm/.github/actions/deploy-aapi@main
+        uses: harimunjala/controlm@v1.0.0-alpha
         with:
           deployCommand: update_secrets
           endPoint: ${{ vars.QA_AWS_ENDPOINT }}
@@ -83,7 +83,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Deploy Calendars using AAPI
-        uses: BMCDBA-Presales/controlm/.github/actions/deploy-aapi@main
+        uses: harimunjala/controlm@v1.0.0-alpha
         with:
           deployCommand: update_calenders
           endPoint: ${{ vars.QA_AWS_ENDPOINT }}
@@ -96,7 +96,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Deploy Jobs using AAPI
-        uses: BMCDBA-Presales/controlm/.github/actions/deploy-aapi@main
+        uses: harimunjala/controlm@v1.0.0-alpha
         with:
           deployCommand: update_resources
           endPoint: ${{ vars.QA_AWS_ENDPOINT }}
@@ -110,7 +110,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Deploy Connection Profiles using AAPI
-        uses: BMCDBA-Presales/controlm/.github/actions/deploy-aapi@main
+        uses: harimunjala/controlm@v1.0.0-alpha
         with:
           deployCommand: update_cps
           endPoint: ${{ vars.QA_AWS_ENDPOINT }}

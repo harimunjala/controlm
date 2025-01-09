@@ -1,4 +1,4 @@
-// Initial code commit by Hari Kumar Munjala
+// Initial code commit by harimunjala
 const core = require('@actions/core');
 const fs = require('fs').promises;
 const fetch = require('node-fetch');
