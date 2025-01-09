@@ -10,7 +10,6 @@ inputs:
     endPoint:
         description: 'Automation API EndPoint'
         required: true
-        default: 'https://{{controlm-em-hostname:port}}/automation-api'    
     deployDescriptor:
         description: 'Deploy Descriptor File'
         required: false
@@ -20,7 +19,7 @@ inputs:
     debugMode:
         description: 'Debug Mode'
         required: false
-        default: true
+        default: false
     dist-folder:
         description: 'The folder containing the deployable files.'
         required: false

@@ -29,6 +29,10 @@ This custom GitHub Action is designed to facilitate various deployment tasks rel
 - Description: Specifies the folder path where the deployment will occur. By default, GitHub workspace is the processing folder, but users can pass a custom folder path if they use GitHub actions to download artifacts to a custom location.
 - Required: No
 
+### 7. `debugMode`
+- Description: If debugMode is set to true enables debug logs and disables TLS certifcate validation. Do not set debugMode to true in production. By default debugMode is set to false.
+- Required: No
+
 ## Notes
 - The "required" key indicates the minimum required inputs to call these GitHub actions. Additional inputs might be required based on individual commands, and these are taken care of in the JavaScript.
 - Placeholder is provided to handle response output. Current job output is displayed through console logs.
@@ -52,13 +56,13 @@ jobs:
 
   deploy-jobs-qa-aws-demo:
     needs: [deploy-resources-qa-aws-demo, deploy-calenders-qa-aws-demo, deploy-connectionprofiles-qa-aws-demo]
-    runs-on: presalespoc
+    runs-on: gitrunner
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Deploy Jobs using AAPI
-        uses: harimunjala/controlm@v1.0.0-alpha
+        uses: harimunjala/controlm@v1.0.1-beta
         with:
           deployCommand: update_jobs
           endPoint: ${{ vars.QA_AWS_ENDPOINT }}
@@ -66,10 +70,10 @@ jobs:
           deployDescriptor: qa-aws-demo.json
 
   deploy-secrets-qa-aws-demo:
-    runs-on: presalespoc
+    runs-on: gitrunner
     steps:
       - name: Deploy Secrets using AAPI
-        uses: harimunjala/controlm@v1.0.0-alpha
+        uses: harimunjala/controlm@v1.0.1-beta
         with:
           deployCommand: update_secrets
           endPoint: ${{ vars.QA_AWS_ENDPOINT }}
@@ -77,26 +81,26 @@ jobs:
           secretsArray: '${{ toJson(secrets) }}'
 
   deploy-calenders-qa-aws-demo:
-    runs-on: presalespoc
+    runs-on: gitrunner
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Deploy Calendars using AAPI
-        uses: harimunjala/controlm@v1.0.0-alpha
+        uses: harimunjala/controlm@v1.0.1-beta
         with:
           deployCommand: update_calenders
           endPoint: ${{ vars.QA_AWS_ENDPOINT }}
           apiToken: ${{ secrets.QA_AWS_TOKEN }}
 
   deploy-resources-qa-aws-demo:
-    runs-on: presalespoc
+    runs-on: gitrunner
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Deploy Jobs using AAPI
-        uses: harimunjala/controlm@v1.0.0-alpha
+        uses: harimunjala/controlm@v1.0.1-beta
         with:
           deployCommand: update_resources
           endPoint: ${{ vars.QA_AWS_ENDPOINT }}
@@ -104,13 +108,13 @@ jobs:
 
   deploy-connectionprofiles-qa-aws-demo:
     needs: deploy-secrets-qa-aws-demo
-    runs-on: presalespoc
+    runs-on: gitrunner
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Deploy Connection Profiles using AAPI
-        uses: harimunjala/controlm@v1.0.0-alpha
+        uses: harimunjala/controlm@v1.0.1-beta
         with:
           deployCommand: update_cps
           endPoint: ${{ vars.QA_AWS_ENDPOINT }}
