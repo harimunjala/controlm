@@ -1,0 +1,35 @@
+name: 'Deploy Using Automation API'
+description: 'Initial Custom GitHub actions that will deploy resources using the Automation API'
+inputs:
+    deployCommand:
+        description: 'Automation API request'
+        require: true
+    apiToken:
+        description: 'Automation API Token'
+        require: true
+    endPoint:
+        description: 'Automation API EndPoint'
+        required: true
+        default: 'https://se-dev-aapi.sandbox.us1.controlm.com/automation-api'    
+    deployDescriptor:
+        description: 'Deploy Descriptor File'
+        required: false
+    secretsArray:
+        description: 'Secrets Array'
+        required: false
+    debugMode:
+        description: 'Debug Mode'
+        required: false
+        default: true
+    dist-folder:
+        description: 'The folder containing the deployable files.'
+        required: false
+        default: ${{ github.workspace }}
+outputs:
+    response:
+        description: 'API Response'
+    transformPath:
+        description: 'Transformed files with deploy-descriptor file passed'
+runs:
+    using: 'node20'
+    main: 'main.js'
