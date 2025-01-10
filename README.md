@@ -62,18 +62,19 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Deploy Jobs using AAPI
-        uses: harimunjala/controlm@v1.0.1-beta
+        uses: harimunjala/controlm@v1.0.0-beta
         with:
           deployCommand: update_jobs
           endPoint: ${{ vars.QA_AWS_ENDPOINT }}
           apiToken: ${{ secrets.QA_AWS_TOKEN }}
           deployDescriptor: qa-aws-demo.json
+          debugMode: false
 
   deploy-secrets-qa-aws-demo:
     runs-on: gitrunner
     steps:
       - name: Deploy Secrets using AAPI
-        uses: harimunjala/controlm@v1.0.1-beta
+        uses: harimunjala/controlm@v1.0.0-beta
         with:
           deployCommand: update_secrets
           endPoint: ${{ vars.QA_AWS_ENDPOINT }}
@@ -87,7 +88,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Deploy Calendars using AAPI
-        uses: harimunjala/controlm@v1.0.1-beta
+        uses: harimunjala/controlm@v1.0.0-beta
         with:
           deployCommand: update_calenders
           endPoint: ${{ vars.QA_AWS_ENDPOINT }}
@@ -100,7 +101,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Deploy Jobs using AAPI
-        uses: harimunjala/controlm@v1.0.1-beta
+        uses: harimunjala/controlm@v1.0.0-beta
         with:
           deployCommand: update_resources
           endPoint: ${{ vars.QA_AWS_ENDPOINT }}
@@ -114,9 +115,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Deploy Connection Profiles using AAPI
-        uses: harimunjala/controlm@v1.0.1-beta
+        uses: harimunjala/controlm@v1.0.0-beta
         with:
           deployCommand: update_cps
           endPoint: ${{ vars.QA_AWS_ENDPOINT }}
           apiToken: ${{ secrets.QA_AWS_TOKEN }}
           deployDescriptor: qa-aws-demo.json
+          debugMode: true

@@ -1,4 +1,4 @@
-name: 'Deploy Using Automation API'
+name: 'controlm'
 description: 'Initial Custom GitHub actions that will deploy resources using the Automation API'
 inputs:
     deployCommand:
