@@ -1,4 +1,4 @@
-name: 'Control-M GitHub Actions'
+name: 'Control-M GitHub Action'
 description: 'Initial Custom GitHub actions that will deploy resources using the Automation API'
 inputs:
     deployCommand:
