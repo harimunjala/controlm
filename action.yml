@@ -1,5 +1,5 @@
 name: 'Control-M GitHub Action'
-description: 'Initial Custom GitHub actions that will deploy resources using the Automation API'
+description: 'GitHub actions that will deploy resources using the Automation API'
 inputs:
     deployCommand:
         description: 'Automation API request'

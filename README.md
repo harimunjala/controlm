@@ -1,12 +1,12 @@
-# Custom CTM GitHub Action
+# Control-M GitHub Action
 
 ## Overview
-This custom GitHub Action is designed to facilitate various deployment tasks related to Control-M (CTM) using the Automation API. It accepts several inputs to configure and execute different commands within the CTM environment.
+This GitHub Action is designed to facilitate various deployment tasks related to Control-M (CTM) using the Automation API. It accepts several inputs to configure and execute different commands within the CTM environment.
 
 ## Inputs
 
 ### 1. `deployCommand`
-- Description: Specifies the command to be executed by the custom CTM GitHub Action.
+- Description: Specifies the command to be executed by the CTM GitHub Action.
 - Required: Yes
 
 ### 2. `apiToken`
